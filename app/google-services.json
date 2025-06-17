@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "738975052011",
+    "project_id": "codraw-e3908",
+    "storage_bucket": "codraw-e3908.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738975052011:android:148d15b6d4ed08d0148eae",
+        "android_client_info": {
+          "package_name": "com.example.codraw"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo8-e0yWG51SM1jcvcuml5d0XqO2T0LiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
