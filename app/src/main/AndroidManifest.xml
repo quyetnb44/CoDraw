@@ -15,16 +15,6 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
-
-        <activity android:name=".ChanDungActivity"/>
-        <activity android:name=".PhongCanhActivity"/>
-        <activity android:name=".AnimationActivity" />
-        <activity android:name=".TruuTuongActivity" />
-
-        <activity android:name=".CreateNewActivity" />
-
-
-
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />

@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_truu_tuong"
     android:layout_width="160dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
