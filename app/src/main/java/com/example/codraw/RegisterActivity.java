@@ -16,8 +16,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText fullNameEditText, emailEditText, passwordEditText, confirmPasswordEditText;
-    private Button registerButton;
-    private TextView loginTextView;
 
     private FirebaseAuth mAuth;
 
@@ -31,8 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText);
-        registerButton = findViewById(R.id.registerButton);
-        loginTextView = findViewById(R.id.loginTextView);
+        Button registerButton = findViewById(R.id.registerButton);
+        TextView loginTextView = findViewById(R.id.loginTextView);
 
         mAuth = FirebaseAuth.getInstance();
 
