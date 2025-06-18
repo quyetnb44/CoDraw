@@ -19,9 +19,21 @@
             android:text="CoDraw"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#9B51E0"/>
+            android:textColor="#D94194"/>
 
         <!-- Thanh tìm kiếm -->
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo mới"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:background="@drawable/btn_create"
+            android:paddingHorizontal="24dp"
+            android:layout_gravity="end"/>
+
+
         <EditText
             android:id="@+id/etSearch"
             android:layout_width="match_parent"
@@ -48,6 +60,7 @@
                 <include layout="@layout/item_portrait"/>
                 <include layout="@layout/item_animation"/>
                 <include layout="@layout/item_abstract"/>
+
                 <!-- Thêm nhiều item_category nếu muốn -->
 
             </LinearLayout>
@@ -248,5 +261,7 @@
 
             <!-- Thêm các công cụ khác (bút mực, tẩy, bộ lọc...) -->
         </GridLayout>
+
+
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tô Màu Chân Dung"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#4CAF50"
+        android:textColor="#FFF" />
+
+    <!-- Hình mẫu phong cảnh -->
+    <ImageView
+        android:id="@+id/sampleImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/title"
+        android:src="@drawable/sample_chan_dung"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_margin="8dp"
+        android:background="#DDD" />
+
+    <!-- Khu vực vẽ -->
+    <com.example.codraw.DrawView
+        android:id="@+id/drawView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/sampleImage"
+        android:layout_above="@id/colorSection"
+        android:layout_margin="8dp"
+        android:background="#FFFFFF" />
+
+    <!-- Bảng màu -->
+    <LinearLayout
+        android:id="@+id/colorSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomToolbar"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="#F9F9F9">
+
+        <!-- Nút mở bảng màu -->
+        <Button
+            android:id="@+id/btnColorPaletteToggle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="4dp"
+            android:text="🎨"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:padding="4dp" />
+
+        <!-- ✅ Thêm đoạn này để bảng màu có ID -->
+        <LinearLayout
+            android:id="@+id/colorPalette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <View android:id="@+id/colorRed"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/circle_red"/>
+
+            <View android:id="@+id/colorOrange"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/circle_orange"/>
+
+            <View android:id="@+id/colorYellow"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/circle_yellow"/>
+
+            <View android:id="@+id/colorGreen"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/circle_green"/>
+
+            <View android:id="@+id/colorBlue"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/circle_blue"/>
+
+            <View android:id="@+id/colorPurple"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/circle_purple"/>
+
+            <View android:id="@+id/colorBlack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/circle_black"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- Thanh công cụ dưới cùng -->
+    <LinearLayout
+        android:id="@+id/bottomToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="8dp">
+
+        <!-- Hàng 1: Công cụ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:onClick="onPenClick">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_butve"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bút vẽ"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:onClick="onEraserClick">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_tay"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tẩy"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:onClick="onZoomInClick">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_phongto"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phóng to"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:onClick="onZoomOutClick">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_thuphong"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thu nhỏ "
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Hàng 2: Xoá, chia sẻ, xuất ảnh -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:weightSum="3"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:onClick="onClearClick"
+                android:background="@drawable/bg_clear_button"
+                android:padding="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Xoá tất cả"
+                    android:textSize="12sp"
+                    android:textColor="#F44336"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:onClick="onShareClick"
+                android:background="@drawable/bg_share_button"
+                android:padding="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chia sẻ"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:onClick="onExportClick"
+                android:background="@drawable/bg_export_button"
+                android:padding="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Xuất ảnh"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

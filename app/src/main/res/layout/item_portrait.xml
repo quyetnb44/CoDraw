@@ -1,20 +1,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_category_chan_dung"
     android:layout_width="72dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_marginEnd="12dp">
+    android:layout_marginEnd="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground">
 
     <ImageView
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/ic_potrait"
-        android:padding="8dp"/>
+        android:padding="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chân Dung"
         android:textSize="12sp"
-        android:layout_marginTop="4dp"/>
+        android:layout_marginTop="4dp" />
 </LinearLayout>
